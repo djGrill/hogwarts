@@ -21,10 +21,15 @@ class StudentsController < ApplicationController
 
   def hat
     students = Student.where(house_id: nil)
-    students.each do |student|
-      house_id = Random.rand(Constants::HOUSES_COUNT) + 1
-      student.house = House.where(id: house_id).first
-      student.save
+
+    if students.length > 0
+      house_ids = House.select(:id).map { |house| house.id }
+
+      students.each do |student|
+        random_index = Random.rand(house_ids.length)
+        student.house = House.where(id: house_ids[random_index]).first
+        student.save
+      end
     end
 
     redirect_to action: :index

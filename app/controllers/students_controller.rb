@@ -18,4 +18,15 @@ class StudentsController < ApplicationController
 
     redirect_to new_student
   end
+
+  def hat
+    students = Student.where(house_id: nil)
+    students.each do |student|
+      house_id = Random.rand(Constants::HOUSES_COUNT) + 1
+      student.house = House.where(id: house_id).first
+      student.save
+    end
+
+    redirect_to action: :index
+  end
 end

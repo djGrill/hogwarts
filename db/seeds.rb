@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Constants::HOUSES.each do |house_name|
+  house = House.new
+  house.name = house_name
+  house.save
+end

@@ -1,5 +1,9 @@
 <h1>Here are the students</h1>
 
+<% if @students.length > 0 %>
+  <%= link_to 'Sorting Hat (assign students to houses)', controller: :students, action: :hat %>
+<% end %>
+
 <br />
 <br />
 <% @students.each do |student| %>

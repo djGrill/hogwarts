@@ -5,6 +5,7 @@ Hogwarts::Application.routes.draw do
   get '/houses/:id' => 'houses#show', as: :house
 
   get '/students' => 'students#index'
+  get '/students/hat' => 'students#hat'
   get '/students/new' => 'students#new'
   get '/students/create' => 'students#create'
   get '/students/:id' => 'students#show', as: :student

@@ -1,0 +1,8 @@
+<h1>Here are the students</h1>
+
+<br />
+<br />
+<% @students.each do |student| %>
+  <% house = student.house.nil? ? 'None' : student.house.name %>
+  <li><%= link_to student.name, student %> (House: <%= house %>)</li>
+<% end %>

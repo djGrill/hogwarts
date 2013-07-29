@@ -1,3 +1,6 @@
 <h1>Welcome to Hogwarts!</h1>
-<a href="/houses">View Houses</a>
-<a href="students/new">Enroll</a>
+<%= link_to 'View Houses', controller: :houses %>
+<br />
+<%= link_to 'View Students', controller: :students %>
+<br />
+<%= link_to 'Enroll', controller: :students, action: :new %>

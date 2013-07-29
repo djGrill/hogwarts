@@ -1,0 +1,4 @@
+<h1><%= @student.name %></h1>
+<br />
+<% house = @student.house.nil? ? 'None' : link_to(@student.house.name, @student.house) %>
+House: <%= house %>
